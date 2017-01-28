@@ -16,7 +16,8 @@ has $.rules is rw; ## Optional. Set to dispatch rules that sent us here.
 method new (%env, $app) {
   my $req = Web::Request.new(%env, :allow-cgi($app.allow-cgi));
   my $res = Web::Response.new();
-  self.bless(*, :$req, :$res, :$app);
+  # self.bless(*, :$req, :$res, :$app);
+  self.bless(:$req, :$res, :$app);
 }
 
 ## Magic methods, extending the functionality possible in the

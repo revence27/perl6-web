@@ -133,7 +133,8 @@ method new(%env, :$allow-cgi) {
       %new<body> = $*IN.slurp;
     }
   }
-  return self.bless(*, |%new)!initialize();
+  # return self.bless(*, |%new)!initialize();
+  return self.bless(|%new)!initialize();
 }
 
 method !initialize {
